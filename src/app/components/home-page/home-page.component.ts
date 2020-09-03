@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-home-page',
@@ -8,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
 
   list: any[];
+  displayValue: any;
+  // title: string;
+
   constructor() {
+    // this.title = 'Weather App';
     this.list = [];
+    this.displayValue = '';
   }
 
   ngOnInit() {
@@ -18,6 +23,10 @@ export class HomePageComponent implements OnInit {
       {id: 2, name: 'Abu dhabi', temperature: 18},
       {id: 2, name: 'Rome', temperature: 7},
       {id: 2, name: 'Paris', temperature: -1}];
+    this.displayValue = 'hello world!';
   }
 
+  onValueEmitted(valueEmitted: any) {
+    this.displayValue = valueEmitted;
+  }
 }

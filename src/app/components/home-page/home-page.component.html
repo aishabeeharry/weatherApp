@@ -6,4 +6,11 @@
       <div class="temperature">{{ item.temperature }}</div>
     </div>
   </div>
+  <div class="home-details">
+    <div class="parent-details">
+      <div class="title">Parent Component</div>
+      <div> {{ displayValue }} </div>
+    </div>
+    <app-details [valueSelected]="displayValue" (emitValue)="onValueEmitted($event)"></app-details>
+  </div>
 </div>

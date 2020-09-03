@@ -1,6 +1,6 @@
 .home-page {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   top: 0;
   left: 0;
   right: 0;
@@ -49,6 +49,22 @@
           //background: black;
           background: linear-gradient(red, yellow);
         }
+      }
+    }
+  }
+
+
+  .home-details {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+
+    .parent-details {
+      display: flex;
+      flex-direction: row;
+
+      .title {
+        margin: 0 10px;
       }
     }
   }
