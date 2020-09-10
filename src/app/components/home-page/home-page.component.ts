@@ -9,12 +9,16 @@ export class HomePageComponent implements OnInit {
 
   list: any[];
   displayValue: any;
+  isChecked: boolean;
+  label: string;
+
   // title: string;
 
   constructor() {
     // this.title = 'Weather App';
     this.list = [];
     this.displayValue = '';
+    this.isChecked = false;
   }
 
   ngOnInit() {
@@ -24,9 +28,15 @@ export class HomePageComponent implements OnInit {
       {id: 2, name: 'Rome', temperature: 7},
       {id: 2, name: 'Paris', temperature: -1}];
     this.displayValue = 'hello world!';
+    this.isChecked = false;
+    this.label = 'Remember Me';
   }
 
   onValueEmitted(valueEmitted: any) {
     this.displayValue = valueEmitted;
+  }
+
+  rememberMe(check: boolean) {
+    this.isChecked = check;
   }
 }

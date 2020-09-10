@@ -13,4 +13,6 @@
     </div>
     <app-details [valueSelected]="displayValue" (emitValue)="onValueEmitted($event)"></app-details>
   </div>
+  <app-checkbox [checked]="isChecked" [label]="label" (checkChanged)="rememberMe($event)"></app-checkbox>
+  <!--  <div *ngFor="let item of values"> {{ item.title }} </div>-->
 </div>

@@ -1,24 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { DetailsComponent } from './components/details/details.component';
+import {AppComponent} from './app.component';
+import {HomePageComponent} from './components/home-page/home-page.component';
+import {DetailsComponent} from './components/details/details.component';
 import {FormsModule} from '@angular/forms';
-import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
+import {SidemenuComponent} from './components/sidemenu/sidemenu.component';
+import {CheckboxComponent} from './components/checkbox/checkbox.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     DetailsComponent,
-    SidemenuComponent
+    SidemenuComponent,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
