@@ -8,6 +8,8 @@ import {FormsModule} from '@angular/forms';
 import {SidemenuComponent} from './components/sidemenu/sidemenu.component';
 import {CheckboxComponent} from './components/checkbox/checkbox.component';
 import {HttpClientModule} from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import {HttpClientModule} from '@angular/common/http';
     HomePageComponent,
     DetailsComponent,
     SidemenuComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    HeaderComponent,
+    MovieListComponent
   ],
   imports: [
     BrowserModule,

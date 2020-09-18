@@ -1,0 +1,8 @@
+<header>
+  <div class="menus">
+    <div class="menu-item" *ngFor="let menu of menus" (click)="selectMenu(menu.id)">
+      <div class="menu-title">{{ menu.name }}</div>
+    </div>
+  </div>
+</header>
+

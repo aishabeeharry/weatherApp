@@ -1,0 +1,36 @@
+:host {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  header {
+    background-color: #000000;
+    color: #9a9dac;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    //align-items: center;
+    margin-top: 0;
+
+    .menus {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+
+      .menu-item {
+        display: flex;
+        border: 1px solid #cccccc;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+
+        .menu-title {
+          color: #cccccc;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+}

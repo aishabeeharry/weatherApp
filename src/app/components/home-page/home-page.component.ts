@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {MoviesService} from '../../providers/movies.service';
+import Movie from '../../dto/movie';
 
 @Component({
   selector: 'app-home-page',
@@ -12,13 +14,18 @@ export class HomePageComponent implements OnInit {
   isChecked: boolean;
   label: string;
 
-  // title: string;
 
-  constructor() {
+  movies: Movie[];
+  // title: string;
+  movieList: Movie[];
+
+  constructor(private _moviesService: MoviesService) {
     // this.title = 'Weather App';
     this.list = [];
     this.displayValue = '';
     this.isChecked = false;
+    this.movies = [];
+    this.movieList = [];
   }
 
   ngOnInit() {
@@ -30,6 +37,7 @@ export class HomePageComponent implements OnInit {
     this.displayValue = 'hello world!';
     this.isChecked = false;
     this.label = 'Remember Me';
+    // this.getMovies();
   }
 
   onValueEmitted(valueEmitted: any) {
@@ -38,5 +46,38 @@ export class HomePageComponent implements OnInit {
 
   rememberMe(check: boolean) {
     this.isChecked = check;
+  }
+
+  getMovies() {
+    this._moviesService.getMoviesList().subscribe((data: any) => {
+      console.log(data);
+
+      data.forEach((element: any) => {
+        const movie: Movie = new Movie();
+        movie.title = element.title;
+        movie.contentRating = element.contentRating;
+        this.movies.push(movie);
+      });
+    });
+  }
+
+  getPopularMovies() {
+    this._moviesService.fetchPopularMovies().subscribe(() => {
+      this.movieList = this._moviesService.movieList;
+    });
+  }
+
+  getUpcomingMovies() {
+    this._moviesService.fetchUpcomingMovies().subscribe(() => {
+      this.movieList = this._moviesService.movieList;
+    });
+  }
+
+  selectMenu(id: number) {
+    if (id === 0) {
+      this.getUpcomingMovies();
+    } else {
+      this.getPopularMovies();
+    }
   }
 }
