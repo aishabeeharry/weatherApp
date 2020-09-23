@@ -10,6 +10,8 @@ import {CheckboxComponent} from './components/checkbox/checkbox.component';
 import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
+import {AppRoutingModule} from './app-routing.module';
+import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
     SidemenuComponent,
     CheckboxComponent,
     HeaderComponent,
-    MovieListComponent
+    MovieListComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

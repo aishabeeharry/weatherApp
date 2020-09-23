@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MoviesService} from '../../providers/movies.service';
 import Movie from '../../dto/movie';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -13,14 +14,10 @@ export class HomePageComponent implements OnInit {
   displayValue: any;
   isChecked: boolean;
   label: string;
-
-
   movies: Movie[];
-  // title: string;
   movieList: Movie[];
 
-  constructor(private _moviesService: MoviesService) {
-    // this.title = 'Weather App';
+  constructor(private _moviesService: MoviesService, private _router: Router) {
     this.list = [];
     this.displayValue = '';
     this.isChecked = false;
@@ -61,23 +58,13 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  getPopularMovies() {
-    this._moviesService.fetchPopularMovies().subscribe(() => {
-      this.movieList = this._moviesService.movieList;
-    });
-  }
-
-  getUpcomingMovies() {
-    this._moviesService.fetchUpcomingMovies().subscribe(() => {
-      this.movieList = this._moviesService.movieList;
-    });
-  }
-
   selectMenu(id: number) {
     if (id === 0) {
-      this.getUpcomingMovies();
+      this._router.navigateByUrl('/upcoming').then(() => {
+      });
     } else {
-      this.getPopularMovies();
+      this._router.navigateByUrl('/popular').then(() => {
+      });
     }
   }
 }

@@ -5,9 +5,18 @@ export default class Movie {
   private _genres: string[];
   private _contentRating: string;
   private _imageUrl: string;
+  private _overview: string;
 
   constructor() {
 
+  }
+
+  get overview(): string {
+    return this._overview;
+  }
+
+  set overview(value: string) {
+    this._overview = value;
   }
 
   get id(): number {
