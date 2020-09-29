@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import {AppRoutingModule} from './app-routing.module';
 import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
+import {LoginComponent} from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MovieDetailsComponent} from './components/movie-details/movie-details.co
     CheckboxComponent,
     HeaderComponent,
     MovieListComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
