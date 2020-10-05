@@ -1,0 +1,47 @@
+.locale-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+
+  .locale-item {
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    border: 1px solid #2b244d;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    margin-right: 10px;
+    transform: translate3d(0, 0, 0);
+    transition: all 300ms ease-in-out;
+    width: 30px;
+
+    .locale-label {
+      color: #2b244d;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 15px;
+      text-transform: uppercase;
+    }
+
+    &.selected {
+      background-color: #2b244d;
+      transition: all 300ms ease-in-out;
+
+      .locale-label {
+        color: #FFFFFF;
+      }
+
+      &:hover {
+        background-color: #2b244d;
+      }
+    }
+
+    &:hover {
+      background-color: #a283f0;
+    }
+  }
+}

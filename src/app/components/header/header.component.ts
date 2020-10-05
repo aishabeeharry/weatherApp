@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
   @Output() selectedMenu: EventEmitter<number>;
 
   constructor() {
-    this.menus = [{id: 0, name: 'Upcoming Movies'}, {id: 1, name: 'Popular Movies'}];
+    this.menus = [{id: 0, name: 'upcoming'}, {id: 1, name: 'popular'}];
     this.selectedMenu = new EventEmitter<number>();
   }
 

@@ -1,0 +1,11 @@
+<div class="settings" [class.hide]="!showDropdown">
+  <div class="button" (click)="toggleList()"></div>
+  <div class="dropdown">
+    <div class="locale-container">
+      <div class="locale-title">{{ 'settings' | translate }}</div>
+      <app-locale [localeArray]="languages" [selectedCode]="currentLanguage"
+                  (language)="changeLanguage($event)"></app-locale>
+    </div>
+  </div>
+</div>
+

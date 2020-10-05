@@ -1,0 +1,5 @@
+<div class="locale-container">
+  <div class="locale-item" *ngFor="let locale of localeArray" (click)="selectItem(locale)" [class.selected]="selectedCode === locale">
+    <div class="locale-label"> {{ locale }} </div>
+  </div>
+</div>

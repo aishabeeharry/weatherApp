@@ -1,0 +1,46 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .settings {
+    position: relative;
+
+    .button {
+      background: url('./../../../assets/imgs/more.svg') center center transparent;
+      background-size: 100%;
+      width: 18px;
+      height: 4px;
+      margin: 0 30px 0 15px;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      background: #FFFFFF;
+      z-index: 999;
+      top: 43px;
+      //left: -196px;
+      left: -189px;
+      border-radius: 4px;
+      min-width: 240px;
+      //min-height: 260px;
+      min-height: 225px;
+
+      .locale-container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 15px;
+      }
+    }
+
+    &.hide {
+
+      .dropdown {
+        display: none;
+      }
+    }
+  }
+}
